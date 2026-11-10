@@ -24,6 +24,7 @@
 <link rel="stylesheet" href="css/v1.10.css">
 <link rel="stylesheet" href="css/v1.11.css">
 <link rel="stylesheet" href="css/v1.12.css">
+<link rel="stylesheet" href="css/v1.13.css">
 <script src="config/ads-config.js"></script>
 <script src="config/app-config.js"></script>
 </head>
@@ -55,7 +56,6 @@
       </div>
     </div>
     <div class="top-right">
-      <div class="language-wrap" id="languageWrap"><button type="button" class="language-trigger" id="languageTrigger" aria-haspopup="true" aria-expanded="false" aria-label="Language"><span id="languageCode">UA</span><i data-icon="chevron-down"></i></button><div class="language-popover" id="languagePopover" role="menu"></div></div>
       <button class="icon-btn" id="projectBtn" title="Project" data-uk-title="Проєкт" aria-label="Project"><i data-icon="folder"></i></button>
       <button class="icon-btn" id="settingsBtn" title="Settings" data-uk-title="Налаштування" aria-label="Settings"><i data-icon="gear"></i></button>
       <button class="btn btn-primary btn-export" id="exportBtn" aria-label="Export"><i data-icon="export"></i><span class="lg" data-uk="Експорт відео">Export video</span><span class="sm" data-uk="Експорт">Export</span></button>
@@ -139,10 +139,6 @@
               <button type="button" class="btn btn-primary btn-lg" id="emptyNew"><i data-icon="plus"></i><span data-uk="Новий проєкт">New project</span></button>
               <button class="btn btn-ghost btn-lg" id="emptyOpen"><i data-icon="folder"></i><span data-uk="Відкрити проєкт">Open project</span></button>
             </div>
-            <div class="welcome-lang"><span data-uk="Мова">Language</span><div class="welcome-language-wrap" id="welcomeLanguageWrap">
-  <button class="welcome-language-trigger" type="button" id="welcomeLanguageBtn" aria-haspopup="true" aria-expanded="false"><span id="welcomeLanguageName">Українська</span><i data-icon="chevron-down"></i></button>
-  <div class="welcome-language-popover language-popover" id="welcomeLanguagePopover" role="menu"></div>
-</div></div>
           </div>
         </div>
 
@@ -228,6 +224,7 @@
 <script defer src="js/media/video-audio.js"></script>
 <script defer src="js/export/muxers.js"></script>
 <script defer src="js/export/offline-renderer.js"></script>
+<script defer src="js/export/recorder-fallback.js"></script>
 <script defer src="js/export/recorder.js"></script>
 <script defer src="js/storage/projects.js"></script>
 <script defer src="js/ui/panels.js"></script>
