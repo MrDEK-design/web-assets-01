@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#060609">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="PulseWave Studio — turn your track into a stunning music video for TikTok, Reels and YouTube right in the browser.">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23ff2bd6'/%3E%3Cstop offset='.5' stop-color='%238a2bff'/%3E%3Cstop offset='1' stop-color='%2300e5ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='9' fill='%2312121a'/%3E%3Cg fill='url(%23g)'%3E%3Crect x='7' y='13' width='2.6' height='6' rx='1.3'/%3E%3Crect x='11.2' y='8' width='2.6' height='16' rx='1.3'/%3E%3Crect x='15.4' y='10.5' width='2.6' height='11' rx='1.3'/%3E%3Crect x='19.6' y='7' width='2.6' height='18' rx='1.3'/%3E%3Crect x='23.8' y='12.5' width='2.6' height='7' rx='1.3'/%3E%3C/g%3E%3C/svg%3E">
+<title>PulseWave Studio</title>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/panels.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/v1.3.css">
+<link rel="stylesheet" href="css/v1.4.css">
+<link rel="stylesheet" href="css/v1.5.css">
+<link rel="stylesheet" href="css/v1.5.1.css">
+<link rel="stylesheet" href="css/v1.6.css">
+<link rel="stylesheet" href="css/v1.7.css">
+<link rel="stylesheet" href="css/v1.8.css">
+<link rel="stylesheet" href="css/v1.9.css">
+<link rel="stylesheet" href="css/v1.10.css">
+<link rel="stylesheet" href="css/v1.11.css">
+<link rel="stylesheet" href="css/v1.12.css">
+<script src="config/ads-config.js"></script>
+<script src="config/app-config.js"></script>
+</head>
+<body>
+
+<div class="boot" id="boot">
+  <div class="boot-in">
+    <div class="logo"><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="boot-name">PulseWave Studio</div>
+    <div class="boot-bar"><i></i></div>
+  </div>
+</div>
+
+<div class="app" id="app">
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo"><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="brand-text"><b>PulseWave</b><span>Studio</span></div>
+      <span class="badge">FREE</span>
+    </div>
+    <div class="top-mid">
+      <div class="seg seg-top" id="formatSeg">
+        <i class="seg-ind"></i>
+        <button data-format="9:16" class="active" title="TikTok / Reels / Shorts"><i class="fshape" style="width:7px;height:12px"></i><span>9:16</span></button>
+        <button data-format="4:5" title="Instagram"><i class="fshape" style="width:9px;height:11px"></i><span>4:5</span></button>
+        <button data-format="1:1" title="1:1"><i class="fshape" style="width:10px;height:10px"></i><span>1:1</span></button>
+        <button data-format="16:9" title="YouTube"><i class="fshape" style="width:13px;height:8px"></i><span>16:9</span></button>
+      </div>
+    </div>
+    <div class="top-right">
+      <div class="language-wrap" id="languageWrap"><button type="button" class="language-trigger" id="languageTrigger" aria-haspopup="true" aria-expanded="false" aria-label="Language"><span id="languageCode">UA</span><i data-icon="chevron-down"></i></button><div class="language-popover" id="languagePopover" role="menu"></div></div>
+      <button class="icon-btn" id="projectBtn" title="Project" data-uk-title="Проєкт" aria-label="Project"><i data-icon="folder"></i></button>
+      <button class="icon-btn" id="settingsBtn" title="Settings" data-uk-title="Налаштування" aria-label="Settings"><i data-icon="gear"></i></button>
+      <button class="btn btn-primary btn-export" id="exportBtn" aria-label="Export"><i data-icon="export"></i><span class="lg" data-uk="Експорт відео">Export video</span><span class="sm" data-uk="Експорт">Export</span></button>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="studio">
+      <div class="stage" id="stage">
+
+        <div class="hud">
+          <div>
+            <span class="hud-pill mono hidden" id="fpsPill">— FPS</span>
+          </div>
+          <div>
+            <span class="rec-pill"><i></i>REC <b class="mono" id="recTime">00:00</b></span>
+            <button class="icon-btn glass" id="shotBtn" title="Save PNG frame (P)" data-uk-title="Зберегти кадр PNG (P)" aria-label="PNG"><i data-icon="camera"></i></button>
+            <button class="icon-btn glass" id="fsBtn" title="Fullscreen (F)" data-uk-title="На весь екран (F)" aria-label="Fullscreen"><i data-icon="max"></i></button>
+          </div>
+        </div>
+        <div class="frame" id="frame"><canvas id="canvas" width="540" height="960"></canvas><div class="cs-anchor hidden" id="csAnchor" aria-hidden="true"><i></i></div></div>
+        <div class="drop-overlay" id="dropOverlay">
+          <div class="drop-msg"><span class="drop-icon"><i data-icon="upload"></i></span><b data-uk="Відпустіть файл">Drop the file</b><span data-uk="Аудіо стане треком, зображення чи відео — фоном, .pwproj — проєктом">Audio becomes the track, an image or video becomes the background, .pwproj opens a project</span></div>
+        </div>
+      </div>
+
+      <div class="transport">
+        <div class="tp-left">
+          <button class="tbtn" id="backBtn" title="Back 5 s (←)" data-uk-title="Назад 5 с (←)" aria-label="Back"><i data-icon="back"></i></button>
+          <button class="play" id="playBtn" title="Play / pause (Space)" data-uk-title="Відтворити / пауза (Пробіл)" aria-label="Play"><i data-icon="play" class="ic-play"></i><i data-icon="pause" class="ic-pause"></i></button>
+          <button class="tbtn" id="fwdBtn" title="Forward 5 s (→)" data-uk-title="Вперед 5 с (→)" aria-label="Forward"><i data-icon="fwd"></i></button>
+        </div>
+        <div class="tp-track">
+          <div class="tp-meta">
+            <span class="tp-title" id="tpTitle">—</span>
+            <span class="tp-time mono"><b id="tCur">00:00</b> / <span id="tDur">00:00</span></span>
+          </div>
+          <div class="scrub" id="scrub"><canvas id="scrubCanvas"></canvas><div class="scrub-tip mono" id="scrubTip">00:00</div></div>
+        </div>
+        <div class="tp-right">
+          <div class="vol">
+            <button class="tbtn" id="muteBtn" title="Sound (M)" data-uk-title="Звук (M)" aria-label="Mute"><i data-icon="vol" id="volIcon"></i></button>
+            <input type="range" id="volume" min="0" max="100" value="85" aria-label="Volume">
+          </div>
+        </div>
+      </div>
+      <div class="ad ad-mobile" id="adMobile" data-slot="mobile"></div>
+    </section>
+
+    <div class="sheet-backdrop" id="sheetBackdrop"></div>
+    <aside class="sheet" id="sheet">
+      <div class="sheet-handle" id="sheetHandle"><i></i></div>
+      <nav class="tabs" id="tabs">
+        <span class="tab-ind" id="tabInd"></span>
+        <button class="tab active" data-tab="media"><i data-icon="music"></i><span data-uk="Медіа">Media</span></button>
+        <button class="tab" data-tab="style"><i data-icon="palette"></i><span data-uk="Стиль">Style</span></button>
+        <button class="tab" data-tab="layers"><i data-icon="layers"></i><span data-uk="Шари">Layers</span></button>
+        <button class="tab" data-tab="fx"><i data-icon="sparkles"></i><span data-uk="Ефекти">Effects</span></button>
+        <button class="tab" data-tab="text"><i data-icon="type"></i><span data-uk="Текст">Text</span></button>
+        <button class="tab" data-tab="export"><i data-icon="film"></i><span data-uk="Експорт">Export</span></button>
+      </nav>
+      <div class="panels" id="panels">
+        <div class="panel active" data-panel="media"></div>
+        <div class="panel" data-panel="style"></div>
+        <div class="panel" data-panel="layers"></div>
+        <div class="panel" data-panel="fx"></div>
+        <div class="panel" data-panel="text"></div>
+        <div class="panel" data-panel="export"></div>
+      </div>
+      <div class="ad ad-side" id="adSide" data-slot="side"></div>
+      <div class="sheet-foot"><i></i><span id="footInfo">PulseWave Studio</span></div>
+    </aside>
+  </main>
+</div>
+
+        <div class="empty" id="empty">
+          <div class="empty-card">
+            <div class="orb"><span><i></i><i></i><i></i><i></i><i></i></span></div>
+            <h2 data-uk="Перетворіть трек на відео">Turn your track into a video</h2>
+            <div class="empty-actions">
+              <button type="button" class="btn btn-primary btn-lg" id="emptyNew"><i data-icon="plus"></i><span data-uk="Новий проєкт">New project</span></button>
+              <button class="btn btn-ghost btn-lg" id="emptyOpen"><i data-icon="folder"></i><span data-uk="Відкрити проєкт">Open project</span></button>
+            </div>
+            <div class="welcome-lang"><span data-uk="Мова">Language</span><div class="welcome-language-wrap" id="welcomeLanguageWrap">
+  <button class="welcome-language-trigger" type="button" id="welcomeLanguageBtn" aria-haspopup="true" aria-expanded="false"><span id="welcomeLanguageName">Українська</span><i data-icon="chevron-down"></i></button>
+  <div class="welcome-language-popover language-popover" id="welcomeLanguagePopover" role="menu"></div>
+</div></div>
+          </div>
+        </div>
+
+<div class="toasts" id="toasts"></div>
+
+<div class="modal" id="settingsModal" role="dialog" aria-modal="true">
+  <div class="modal-card">
+    <div class="modal-head"><span data-uk="Налаштування">Settings</span><button class="icon-btn" id="settingsClose" aria-label="Close"><i data-icon="x"></i></button></div>
+    <div class="modal-body" id="settingsBody"></div>
+  </div>
+</div>
+
+<div class="modal" id="projectModal" role="dialog" aria-modal="true">
+  <div class="modal-card">
+    <div class="modal-head"><span data-uk="Проєкт">Project</span><button class="icon-btn" id="projectClose" aria-label="Close"><i data-icon="x"></i></button></div>
+    <div class="modal-body" id="projectBody"></div>
+  </div>
+</div>
+
+<div class="xp" id="xp" role="dialog" aria-modal="true">
+  <div class="xp-card">
+    <div class="xp-prev"><canvas id="xpCanvas" width="180" height="320"></canvas><span class="xp-live"><i></i><span id="xpLive">LIVE</span></span></div>
+    <div class="xp-info">
+      <span class="xp-kicker" data-uk="Покадровий експорт">Frame-accurate export</span>
+      <div class="xp-title" id="xpTitle">Rendering video</div>
+      <div class="xp-sub" id="xpSub">—</div>
+      <div class="xp-pct mono" id="xpPct">0%</div>
+      <div class="xp-bar"><div class="xp-fill" id="xpFill"></div></div>
+      <div class="xp-stats">
+        <div class="xp-stat"><span data-uk="Минуло">Elapsed</span><b id="xpElapsed">00:00</b></div>
+        <div class="xp-stat"><span data-uk="Орієнтовно">Est. left</span><b id="xpLeft">—</b></div>
+        <div class="xp-stat"><span data-uk="Відео FPS">Output FPS</span><b id="xpFps">—</b></div>
+        <div class="xp-stat"><span data-uk="Розмір">Size</span><b id="xpSize">—</b></div>
+      </div>
+      <div class="xp-warn" id="xpWarn"><i data-icon="info"></i><span>—</span></div>
+      <div class="xp-actions">
+        <button class="btn btn-ghost" id="xpCancel"><i data-icon="x"></i><span data-uk="Скасувати">Cancel</span></button>
+        <button class="btn btn-primary hidden" id="xpDownload"><i data-icon="download"></i><span data-uk="Завантажити ще раз">Download again</span></button>
+        <button class="btn btn-ghost hidden" id="xpShare"><i data-icon="share"></i><span data-uk="Поділитися">Share</span></button>
+        <button class="btn btn-ghost hidden" id="xpClose"><span data-uk="Закрити">Close</span></button>
+      </div>
+    </div>
+    <div class="ad ad-xp" id="adExport" data-slot="export"></div>
+  </div>
+</div>
+
+<div class="modal" id="importModal" role="dialog" aria-modal="true" aria-labelledby="importHeading">
+  <div class="modal-card import-card">
+    <div class="modal-head"><span id="importHeading">Import media</span><button class="icon-btn" type="button" id="importClose" aria-label="Close"><i data-icon="x"></i></button></div>
+    <div class="modal-body">
+      <div class="import-file"><span class="import-file-icon"><i data-icon="upload"></i></span><div class="import-file-copy"><b id="importFileName">—</b><span id="importFileInfo">—</span></div></div>
+      <p id="importDescription" class="import-description"></p>
+      <div class="import-choices" id="importChoices"></div>
+      <button class="btn btn-ghost btn-block import-cancel" type="button" id="importCancel">Cancel</button>
+    </div>
+  </div>
+</div>
+<input type="file" id="emptyFile" accept="audio/*,video/mp4,video/webm,video/quicktime,.mp3,.wav,.ogg,.m4a,.flac,.aac,.mp4,.webm,.mov,.m4v" hidden>
+<input type="file" id="projectFile" accept=".pwproj,.json,application/json" hidden>
+<input type="file" id="fontFile" accept=".ttf,.otf,.woff,.woff2,font/ttf,font/otf,font/woff,font/woff2" hidden>
+
+<script defer src="js/core/utils.js"></script>
+<script defer src="js/core/i18n.js"></script>
+<script defer src="js/core/catalog.js"></script>
+<script defer src="js/core/state.js"></script>
+<script defer src="js/core/ads.js"></script>
+<script defer src="js/audio/player.js"></script>
+<script defer src="js/audio/spectrum.js"></script>
+<script defer src="js/render/engine.js"></script>
+<script defer src="js/render/styles/state.js"></script>
+<script defer src="js/render/styles/neon.js"></script>
+<script defer src="js/render/styles/trap.js"></script>
+<script defer src="js/render/styles/synthwave.js"></script>
+<script defer src="js/render/styles/minimal.js"></script>
+<script defer src="js/render/styles/players.js"></script>
+<script defer src="js/render/styles/retro.js"></script>
+<script defer src="js/render/styles/toon.js"></script>
+<script defer src="js/render/styles/v14.js"></script>
+<script defer src="js/render/styles/collection.js"></script>
+<script defer src="js/render/styles/next.js"></script>
+<script defer src="js/render/compositor.js"></script>
+<script defer src="js/media/imports.js"></script>
+<script defer src="js/media/video-audio.js"></script>
+<script defer src="js/export/muxers.js"></script>
+<script defer src="js/export/offline-renderer.js"></script>
+<script defer src="js/export/recorder.js"></script>
+<script defer src="js/storage/projects.js"></script>
+<script defer src="js/ui/panels.js"></script>
+<script defer src="js/ui/cover-palette.js"></script>
+<script defer src="js/ui/controls.js"></script>
+<script defer src="js/ui/tutorial.js"></script>
+<script defer src="js/ui/drag-import.js"></script>
+<script defer src="js/ui/player-ui.js"></script>
+<script defer src="js/media/crop.js"></script>
+<script defer src="js/media/bg-crop.js"></script>
+<script defer src="js/core/telegram.js"></script>
+<script defer src="js/app.js"></script>
+</body>
+</html>
