@@ -1,1 +1,32 @@
-body.pw-telegram{overscroll-behavior:none}body.pw-telegram .app{height:var(--pw-tg-height,100dvh)}body.pw-telegram .topbar{padding-left:calc(12px + var(--pw-tg-left,0px));padding-right:calc(12px + var(--pw-tg-right,0px));padding-top:var(--pw-tg-top,0);min-width:0}body.pw-telegram .top-right{gap:4px}body.pw-telegram .sheet{padding-bottom:calc(4px + var(--pw-tg-bottom,0px))}body.pw-telegram .main{min-height:0}body.pw-telegram .modal,body.pw-telegram .xp{padding-top:calc(12px + var(--pw-tg-top,0px));padding-bottom:calc(12px + var(--pw-tg-bottom,0px))}body.pw-telegram .modal-card,body.pw-telegram .xp-card{max-height:calc(var(--pw-tg-height,100dvh) - var(--pw-tg-top,0px) - var(--pw-tg-bottom,0px) - 24px)}@media(max-width:860px){body.pw-telegram{--top-h:calc(54px + var(--pw-tg-top,0px));--peek:calc(92px + var(--pw-tg-bottom,0px))}body.pw-telegram .topbar{height:var(--top-h)}body.pw-telegram .brand{gap:6px}body.pw-telegram .brand-text{display:none}body.pw-telegram .badge{display:none}body.pw-telegram .top-mid{display:none}body.pw-telegram .language-trigger{min-width:52px}body.pw-telegram .sheet{height:min(79%,740px);bottom:0}body.pw-telegram .main{padding-bottom:var(--peek)}body.pw-telegram .studio{padding:8px;gap:8px}body.pw-telegram .hud{top:8px;left:8px;right:8px}}@media(max-width:380px){body.pw-telegram .language-trigger{min-width:44px;padding:0 8px}body.pw-telegram .top-right{gap:1px}body.pw-telegram .topbar{padding-left:calc(8px + var(--pw-tg-left,0px));padding-right:calc(6px + var(--pw-tg-right,0px))}}
+/* PulseWave 1.11 | Telegram safe-area support + polished narrow header */
+body.pw-telegram{overscroll-behavior:none}
+body.pw-telegram .app{height:var(--pw-tg-height,100dvh)}
+body.pw-telegram .topbar{
+  padding-left:calc(12px + var(--pw-tg-left,0px));
+  padding-right:calc(12px + var(--pw-tg-right,0px));
+  padding-top:var(--pw-tg-top,0px);
+  min-width:0;
+}
+body.pw-telegram .top-right{gap:4px}
+body.pw-telegram .sheet{padding-bottom:calc(4px + var(--pw-tg-bottom,0px))}
+body.pw-telegram .main{min-height:0}
+body.pw-telegram .modal,body.pw-telegram .xp{padding-top:calc(12px + var(--pw-tg-top,0px));padding-bottom:calc(12px + var(--pw-tg-bottom,0px))}
+body.pw-telegram .xp-card,body.pw-telegram .modal-card{max-height:calc(var(--pw-tg-height,100dvh) - var(--pw-tg-top,0px) - var(--pw-tg-bottom,0px) - 24px)}
+@media(max-width:860px){
+  body.pw-telegram{--top-h:calc(54px + var(--pw-tg-top,0px));--peek:calc(92px + var(--pw-tg-bottom,0px))}
+  body.pw-telegram .topbar{height:var(--top-h)}
+  body.pw-telegram .brand{gap:6px}
+  body.pw-telegram .brand-text{display:none}
+  body.pw-telegram .badge{display:none}
+  body.pw-telegram .top-mid{display:none}
+  body.pw-telegram .language-trigger{min-width:52px}
+  body.pw-telegram .sheet{height:min(79%,740px);bottom:0}
+  body.pw-telegram .main{padding-bottom:var(--peek)}
+  body.pw-telegram .studio{padding:8px;gap:8px}
+  body.pw-telegram .hud{top:8px;left:8px;right:8px}
+}
+@media(max-width:380px){
+  body.pw-telegram .language-trigger{min-width:44px;padding:0 8px}
+  body.pw-telegram .top-right{gap:1px}
+  body.pw-telegram .topbar{padding-left:calc(8px + var(--pw-tg-left,0px));padding-right:calc(6px + var(--pw-tg-right,0px))}
+}

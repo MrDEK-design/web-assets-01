@@ -1,1 +1,25 @@
-.fx-stack{display:flex;flex-direction:column;gap:8px}.fx-item{padding:6px 12px;border:1px solid var(--h1);border-radius:13px;background:var(--s1)}.fx-item:has(input:checked){border-color:var(--h2);background:var(--s2)}.fx-item .toggle-row{min-height:41px;margin:0}.fx-detail{padding:13px 0 2px;border-top:1px solid var(--h1)}.fx-detail .field{margin-bottom:15px}.fx-detail .field:last-child{margin-bottom:6px}.fx-item>[data-if].hidden{display:none!important}.pw-tour{isolation:isolate}.pw-tour-shade{background:rgba(4,4,9,.84)!important;transition:none!important}.pw-tour-spot{border:1px solid rgba(255,255,255,.74);box-shadow:0 0 0 1px rgba(0,0,0,.48);transition:none!important;opacity:1}.pw-tour-pop{background:#18181f!important;transition:opacity .18s ease!important;box-shadow:0 26px 70px rgba(0,0,0,.74)}.pw-tour.preparing .pw-tour-spot{opacity:0!important}.pw-tour.preparing .pw-tour-pop{opacity:0!important;pointer-events:none}.pw-tour-active .sheet{transition:none!important}.pw-tour-active .panels{scroll-behavior:auto!important}.pw-tour-active .panel.active,.pw-tour-active .subpane.active{animation:none!important}@media(max-width:860px){.fx-item{padding:5px 11px}.pw-tour-pop{max-height:calc(100dvh - 20px);overflow:auto}}@media(prefers-reduced-motion:reduce){.pw-tour-pop{transition:none!important}}.pw-tour.preparing .pw-tour-shade:first-child{left:0!important;top:0!important;width:100vw!important;height:100dvh!important}.pw-tour.preparing .pw-tour-shade:not(:first-child){opacity:0!important}.pw-tour.preparing .pw-tour-pop{opacity:0!important}
+/* v1.10 — quiet settings cards and precise tutorial spotlight. */
+.fx-stack{display:flex;flex-direction:column;gap:8px}
+.fx-item{padding:6px 12px;border:1px solid var(--h1);border-radius:13px;background:var(--s1)}
+.fx-item:has(input:checked){border-color:var(--h2);background:var(--s2)}
+.fx-item .toggle-row{min-height:41px;margin:0}
+.fx-detail{padding:13px 0 2px;border-top:1px solid var(--h1)}
+.fx-detail .field{margin-bottom:15px}
+.fx-detail .field:last-child{margin-bottom:6px}
+.fx-item>[data-if].hidden{display:none!important}
+.pw-tour{isolation:isolate}
+.pw-tour-shade{background:rgba(4,4,9,.84)!important;transition:none!important}
+.pw-tour-spot{border:1px solid rgba(255,255,255,.74);box-shadow:0 0 0 1px rgba(0,0,0,.48);transition:none!important;opacity:1}
+.pw-tour-pop{background:#18181f!important;transition:opacity .18s ease!important;box-shadow:0 26px 70px rgba(0,0,0,.74)}
+.pw-tour.preparing .pw-tour-spot{opacity:0!important}
+.pw-tour.preparing .pw-tour-pop{opacity:0!important;pointer-events:none}
+.pw-tour-active .sheet{transition:none!important}
+.pw-tour-active .panels{scroll-behavior:auto!important}
+.pw-tour-active .panel.active,.pw-tour-active .subpane.active{animation:none!important}
+@media(max-width:860px){.fx-item{padding:5px 11px}.pw-tour-pop{max-height:calc(100dvh - 20px);overflow:auto}}
+@media(prefers-reduced-motion:reduce){.pw-tour-pop{transition:none!important}}
+
+.pw-tour.preparing .pw-tour-shade:first-child{left:0!important;top:0!important;width:100vw!important;height:100dvh!important}
+.pw-tour.preparing .pw-tour-shade:not(:first-child){opacity:0!important}
+.pw-tour.preparing .pw-tour-pop{opacity:0!important}
+

@@ -1,0 +1,4 @@
+# After approval, copy this file to ads.txt in the project root.
+# Replace PUB_ID with your actual AdSense publisher ID (pub- + 16 digits).
+# NEVER put the placeholder itself in a published ads.txt file.
+google.com, pub-REPLACE_WITH_YOUR_16_DIGIT_ID, DIRECT, f08c47fec0942fa0

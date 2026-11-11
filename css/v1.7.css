@@ -1,1 +1,4 @@
-.palette-compact-btn{min-height:31px;flex:none;padding:0 9px;font-size:10.5px;white-space:nowrap}.palette-compact-btn:disabled{opacity:.42;cursor:not-allowed}@media(max-width:390px){.palette-compact-btn{font-size:10px}}
+/* Compact color palette button. */
+.palette-compact-btn{min-height:31px;flex:none;padding:0 9px;font-size:10.5px;white-space:nowrap}
+.palette-compact-btn:disabled{opacity:.42;cursor:not-allowed}
+@media(max-width:390px){.palette-compact-btn{font-size:10px}}
